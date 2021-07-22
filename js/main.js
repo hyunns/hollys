@@ -21,19 +21,16 @@
 
   // 메인슬라이더 초기화
   var mainSlider = new Swiper('.main_slider', {
-    loop: true, // 반복
-    speed: 500, // 슬라이드 이동속도
-    // simulateTouch: false, // 마우스드래그(mousemove) 막기
+    loop: true,
+    speed: 500,
     autoplay: {
-      delay: 4000, // 다음 슬라이드 지연시간
-      disableOnInteraction: false, // 안쪽 버튼 클릭시 안 멈추게 함
+      delay: 4000,
+      disableOnInteraction: false,
     },
-    // 페이지네이션
     pagination: {
-      el: '.swiper-pagination', // 클래스명들이 문자로 들어가있음
-      clickable: true, // 클릭이벤트
+      el: '.swiper-pagination',
+      clickable: true,
     },
-    // 좌우 화살표
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
@@ -59,14 +56,13 @@
 
   // 메인 product 슬라이더
   var menuSlider = new Swiper('.menu_slider', {
-    slidesPerView: 4, // 동시에 보여줄 슬라이드 갯수
-    // slidesPerGroup: 4, 넘어가는 슬라이드 갯수
-    speed: 500, // 슬라이드 이동속도
+    slidesPerView: 4,
+    speed: 500,
     autoplay: {
-      delay: 4000, // 다음 슬라이드 지연시간
-      disableOnInteraction: false, // 안쪽 버튼 클릭시 안 멈추게 함
+      delay: 4000,
+      disableOnInteraction: false,
     },    
-    spaceBetween: 30, // 슬라이드 간 간격
+    spaceBetween: 30,
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
@@ -81,13 +77,12 @@
   var newsSlider = new Swiper('.news_slider', {
     direction: 'vertical',
     loop: true,
-    // slidesPerView: 1,
-    speed: 600, // 슬라이드 이동속도
+    speed: 600,
     autoplay: {
-      delay: 5000, // 다음 슬라이드 지연시간
-      disableOnInteraction: false, // 안쪽 버튼 클릭시 안 멈추게 함
+      delay: 5000,
+      disableOnInteraction: false,
     },
-    spaceBetween: 10, // 슬라이드 간 간격
+    spaceBetween: 10,
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
@@ -99,7 +94,7 @@
   });
 
   // top버튼
-  toggleBtnTop(); // 위에서 실행해줌
+  toggleBtnTop();
 
   function toggleBtnTop() {
     var btnTop = $('.top_wrap .btn_top');
@@ -114,7 +109,7 @@
       } else {
         btnTop.fadeOut();
       };
-    }).trigger('scroll'); // 처음에도 스크롤이벤트 강제실행
+    }).trigger('scroll');
   
     // 클릭시 페이지상단으로 애니메이션
     btnTop.on('click', function(e) {

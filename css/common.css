@@ -1,7 +1,5 @@
 @charset "UTF-8";
 
-/* 웹폰트  */
-/* ?#iefix : 익스하위에서 아래쪽 woff, ttf를 다운로드 받지않게 함 */
 @font-face {
     font-family: 'Montserrat';
     font-style: normal;
@@ -32,15 +30,11 @@
         url(../font/Montserrat-Bold.ttf) format('truetype');
 }
 
-/* 반응형, 모바일에서 모든 태그와 모든 가상요소에 box-sizing사용하여 선, 패딩이 크기안에 포함되도록 함 */
-/* 데탑에서는 안씀 *, :before, :after {box-sizing: border-box;} */
-
-/* body에 들어갈 수 있는 모든 태그의 여백 빼기, 폼 요소는 없음 */
 html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, address, code, em, img, strong, sub, sup, b, u, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figure, figcaption, footer, header, hgroup, menu, nav, section, main, audio, video { margin: 0; padding: 0; }
 
-/*html5추가 시멘틱엘리먼트를 익스하위버전에서 블럭으로 인식되도록함*/
+/*html5추가 시멘틱엘리먼트를 익스하위버전에서 블럭 인식*/
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, main { display: block;}
-button { /* button태그에 손모양 커서 */ cursor: pointer; /* outline: none; */ }
+button {cursor: pointer; /* outline: none; */ }
 
 /* 익스하위버전에서 이미지 선없애기 */
 fieldset, img { border: 0; vertical-align: top; }
@@ -53,40 +47,38 @@ address, em { font-style: normal; }
 strong { font-weight: normal; }
 
 /* 페이지안에서 가장 많은 링크색 지정 */
-a { text-decoration: none; color: #444; /* 모바일 크롬, 사파리에서 클릭 시 색상 */ -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1); }
+a {
+    text-decoration: none;
+    color: #444;
+    /* 모바일 크롬, 사파리에서 클릭 시 색상 */
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+}
 
-/* iframe으로 외부컨텐츠를 연결했을때
-외부컨텐츠안쪽내용이 우리페이지에 영향을 주지못하도록 가려줌*/
+/* iframe으로 외부컨텐츠를 연결했을때 외부컨텐츠안쪽내용이 페이지에 영향을 주지 못하도록 가려줌*/
 iframe { overflow: hidden; border: 0; }
 
-/* 칸의 선을 합치기, 칸의 간격없애기, 가로를 늘려줌 */
 table { border-collapse: collapse; border-spacing: 0; width: 100%; }
 
-/* 굵기 빼고 헤딩태그 폰트크기를 body에 선언한 크기와 일치시킴 */
 h1, h2, h3, h4, h5, h6 { font-weight: normal; font-size: 100%; }
 
 /* 폼요소의 높이가 다를때 요소끼리 세로정렬시킴, ios 둥근모서리, 기본스타일 제거 */
 input, select, textarea, button { vertical-align: middle; margin: 0; padding: 0; border-radius: 0; -webkit-appearance: none; }
 
-/* textarea 리사이즈기능 빼기 */
 textarea { resize: none; }
 
-/* 페이지안의 모든 폰트의 줄간격을 1.5로 통일시킴
-모바일 크롬, 모바일 사파리 브라우져의 텍스트 자동확대 방지*/
+/* 모바일 크롬, 모바일 사파리 브라우져의 텍스트 자동확대 방지 */
 body { line-height: 1.5; -webkit-text-size-adjust: none; }
 
 
 /***************************************************
 ******************** 공통스타일 ********************
 ***************************************************/
-
-/* pc브라우저에서 body hidden시 우측스크롤바가 사라지므로 화면이 17px 움직이면서 보이게됨 
-html에 우측스크롤바를 강제생성하고 body높이를 창높이에 맞춰서 hidden하여 우측스크롤영역이 강제로 보이게함
-- body 높이를 줄여서 hidden이므로 화면이 최상단으로 이동됨 */
-/* html {overflow-y: scroll; height: 100%;} */
-/* body.on {overflow: hidden; height:100%;} */
-
-body, input, button, select, textarea, table { /* 호텔사이트처럼 영문이 많을 경우 영문전용은 영문에 한글폰트는 한글에만 적용하기 */ /* 사이트전체 모든 영문에 적용되므로 주의해서 사용 일부만 영문전용을 쓸 경우는 한글폰트만 연결하고 영문은 따로 선언 */ font-family: 'Noto Sans KR', '맑은 고딕', 'malgun gothic', 'Apple SD Gothic Neo', sans-serif; font-size: 16px; color: #444; word-break: break-all; /* letter-spacing: -0.05em; */ }
+body, input, button, select, textarea, table {
+    font-family: 'Noto Sans KR', '맑은 고딕', 'malgun gothic', 'Apple SD Gothic Neo', sans-serif;
+    font-size: 16px;
+    color: #444;
+    word-break: break-all;
+}
 
 /* legend,caption,메뉴제목,섹션제목 블라인드 */
 legend, caption, .blind { position: absolute; overflow: hidden; clip: rect(0 0 0 0); margin: -1px; width: 1px; height: 1px; }
@@ -103,75 +95,27 @@ legend, caption, .blind { position: absolute; overflow: hidden; clip: rect(0 0 0
 /* Firefox 19+ 상위버전 */
 :-ms-input-placeholder { color: #333 !important; }
 
-/* IE10+ 익스에서 컬러가 안 바뀌면(오류) important써서 10000점*/
-
-/* 텍스트 선택시 컬러변경 */
-/* ::selection { background-color: #ff9fcf; color: #ffffff; } */
-
-/* skip navgation */
 #skipNavi a { position: absolute; left: 0; top: -999px; width: 100%; padding: 5px 0; background: #fff; z-index: 99999; text-align: center; }
-
 #skipNavi a:hover, #skipNavi a:active, #skipNavi a:focus { top: 0; }
 
 /* 폼요소 공통스타일 */
 input[type="text"]::-ms-clear { display: none; }
 
-/* input[type="password"]::-ms-reveal {display: none;} */
-
-/* 체크박스 다음에 있는 label요소 한개선택(인접형제선택자) */
-/* input[type="checkbox"] + label {cursor: pointer; line-height: 30px; display: inline-block; position: relative;} input[type="checkbox"] + label:before { content: ''; display: inline-block; width:26px; height: 26px; border-radius: 50%; border:2px solid #dddddd; vertical-align: middle; margin-right: 10px; }
-input[type="checkbox"] + label em {color:green;}
-input[type="checkbox"] + label:after { content: ''; position: absolute; left:5px; top:5px; width:0px; height: 20px; background: url(../images/icon_checkbox.png) no-repeat; transition: all 0.2s; } */
-
-/* checkbox와 radio에 :checked 가상선택자 사용하여 체크상태 판단 */
-/* input[type="checkbox"]:checked + label:after {width:24px;} */
-
-
-/* select 공통 */
-/* 배경색 지정시 부모로 처리 */
-/* .select_wrap {display: inline-block; width:196px; border:2px solid #dddddd; margin-left:6px; position: relative;}
-.select_wrap:after {content: ''; position: absolute; right:15px; top:50%; margin-top:-3px; width:12px; height:7px; background: url(../images/icon_select_arr.png) no-repeat;}
-.select_wrap select {width:100%; height: 41px; border:none; outline: none; color:#999999; padding-left: 15px; position: relative; z-index: 10; background: none;} */
-
 /* 화살표제거 */
 select { -webkit-appearance: none; -moz-appearance: none; appearance: none; }
 select::-ms-expand { display: none; } /* 익스11이하 */
 
-/* textarea {background:#f8f8f8; width:100%; border:none; padding: 15px; outline: none; box-sizing: border-box;} */
-
-/* 파일선택 공통 */
-/* .file_wrap { width:466px; border:2px solid #dddddd; display: inline-block; padding-right: 98px; box-sizing: border-box; position: relative; cursor: pointer; }
-.file_wrap:before {content: ''; position: absolute; right:96px; top:50%; width:2px; height: 16px; margin-top:-8px; background: #e8e8e8;}
-.file_wrap input[type="text"] {height:40px; width:100%; border:none; outline: none;}
-.file_wrap:after {content: '파일선택'; position: absolute; right:18px; top:50%; color:#009223; font-weight: 500; margin-top:-12px;}
-.file_note {font-size: 13px; color: #999999; margin-left: 25px;} */
-
 /* 버튼 공통 스타일 */
 .btn { display: inline-block; text-align: center; }
 
-.btn.btn_orange { background: #fff; border: 1px solid #ff7200; color: #ff7200; font-size: 13px; padding: 7px 14px; }
-.btn.btn_orange:hover { color: #fff; background: #ff7200; }
-.btn.btn_green { background-color: #009223; color: #fff; border: 2px solid #009223; }
-.btn.btn_regist:after { content: ''; display: inline-block; width: 21px; height: 16px; background: url(../images/icon_reg.png) no-repeat; margin-left: 5px; }
-
 /* 슬라이더 버튼 loop아닐 때 */
 .swiper-button-disabled { opacity: 1 !important; cursor: pointer !important; pointer-events: all !important; }
-
-/* 폰트컬러 공통 */
-.txt_orange { color: #eb6242; font-weight: 500; }
-.txt_blue { color: #0ba9b5; font-weight: 700; }
 
 /* 체크박스 공통 */
 .checkbox_wrap { text-align: left; margin-left: 6px; }
 .checkbox_wrap input[type="checkbox"]:checked+label:before { background: url(../images/icon_checkbox.png) no-repeat; background-size: 20px; }
 .checkbox_wrap label { padding-left: 32px; cursor: pointer; position: relative; }
 .checkbox_wrap label:before { content: ''; position: absolute; left: 0; top: 0; width: 20px; height: 20px; border: 2px solid #ddd; border-radius: 5px; }
-
-/* sprite 아이콘 공통스타일 */
-.icon { display: inline-block; background: url(../images/sp_main_153a02.png) no-repeat; background-size: 440px; vertical-align: top; }
-
-/* button안에 icon이 수직정렬로 들어가야할 경우 기본값인 baseline으로 처리 */
-/* button .icon {vertical-align: baseline;} */
 
 /* ***************************************** */
 /* *********** pd_tit 공통스타일 ************ */
@@ -215,7 +159,7 @@ select::-ms-expand { display: none; } /* 익스11이하 */
 #header .top_header .util_wrap .search { position: relative; }
 
 /* 검색버튼 공통 */
-.btn_search { width: 32px; height: 32px; background: url(../images/search.png) 50% 50% no-repeat; /* 비주얼요소가 아니라서 outline:none; 하지않음 */ border: none; text-indent: -9999px; }
+.btn_search { width: 32px; height: 32px; background: url(../images/search.png) 50% 50% no-repeat; border: none; text-indent: -9999px; }
 #header .top_header .util_wrap .btn_search.on { background: url(../images/search_close.png) 50% 50% no-repeat; }
 
 #header .top_header .util_wrap .search_wrap { position: absolute; right: 100%; top: -5px; width: 210px; display: none; }
@@ -261,7 +205,7 @@ input[type="text"] { height: 40px; width: 100%; border: none; outline: none; }
 
 /* 슬라이더 페이지네이션 공통 */
 .swiper-pagination { width: auto !important; left: 50% !important; bottom: 20px !important; }
-.swiper-pagination .swiper-pagination-bullet { width: 12px; height: 12px; background: #fff; margin: 0 5px !important; opacity: 1; transition: width 0.3s; /* radius는 높이로 잡기 */ border-radius: 12px; }
+.swiper-pagination .swiper-pagination-bullet { width: 12px; height: 12px; background: #fff; margin: 0 5px !important; opacity: 1; transition: width 0.3s; border-radius: 12px; }
 .swiper-pagination .swiper-pagination-bullet-active { background: #ba000d; width: 26px; }
 
 /* 슬라이더 토글버튼 */
@@ -421,7 +365,6 @@ input[type="text"] { height: 40px; width: 100%; border: none; outline: none; }
 .pagination .page strong { color: #ac1a2d; font-weight: 500; }
 
 /**************************(서브) 메뉴페이지****************************/
-
 /* 음료 */
 .menu_container .menu_bg.bev { background-image: url(../images/menu_bev.png); }
 
@@ -436,7 +379,6 @@ input[type="text"] { height: 40px; width: 100%; border: none; outline: none; }
 .menu_container .menu_bg.md { background-image: url(../images/menu_md.png); }
 
 /*********************(서브) 베이커리 메뉴************************/
-
 /* 서브비주얼 공통 */
 .sub_visual { height: 330px; background: url(../images/bakery_visual01.png) no-repeat 50%; position: relative; }
 .sub_visual .tit { text-align: center; padding-top: 100px; }
